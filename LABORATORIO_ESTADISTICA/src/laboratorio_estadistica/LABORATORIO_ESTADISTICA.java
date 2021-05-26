@@ -23,7 +23,7 @@ public class LABORATORIO_ESTADISTICA {
         int opcion;
         
            
-            JOptionPane.showMessageDialog(null, "ESTADISTICA 2");
+            JOptionPane.showMessageDialog(null, "ESTADISTICA 3");
             opcion = Integer.parseInt(JOptionPane.showInputDialog("BIENVENIDO, INGRESE LA OPCION QUE DESEA REALIZAR\n" 
             + "1. poblacion y muestra\n "
             + "2. distribucion normal\n"
