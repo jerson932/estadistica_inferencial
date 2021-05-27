@@ -43,6 +43,7 @@ public class PM_finita extends javax.swing.JFrame {
         cajaNoprobabilidad = new javax.swing.JTextField();
         cajaError = new javax.swing.JTextField();
         cajaresult = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,6 +81,13 @@ public class PM_finita extends javax.swing.JFrame {
         cajaPoblacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cajaPoblacionActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("limpiar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -122,7 +130,9 @@ public class PM_finita extends javax.swing.JFrame {
                         .addGap(120, 120, 120)
                         .addComponent(cajaError, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(110, 110, 110)
-                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(result, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(10, 10, 10)
                         .addComponent(cajaresult, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -152,9 +162,12 @@ public class PM_finita extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cajaNoprobabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cajaError, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(cajaresult, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,11 +227,12 @@ double e  = Double.parseDouble(nume) ;*/
  porcentajep = (p/div);//tomar los valores enteros para calcular como porcenteaje
  porcentajeQ = (Q/div);
  porcentajee = (e/div);
-int v=1;
-aux1 = (double)(N*(Math.pow(2,Z))*porcentajep*porcentajeQ);
+double v=1;
+aux1 = (double)(N*(Z*Z)*porcentajep*porcentajeQ);
 
-aux2 = (double)((Math.pow(2,porcentajee)*(N-v)))+((Math.pow(2,Z)*porcentajep*porcentajeQ));
-
+System.out.println(aux1);
+aux2 = (double)((porcentajee*porcentajee)*(N-v))+((Z*Z)*porcentajep*porcentajeQ);
+System.out.println(aux2);
 calc = aux1/aux2;
 
 cajaresult.setText(String.valueOf(calc));
@@ -229,6 +243,15 @@ cajaresult.setText(String.valueOf(calc));
 
         // TODO add your handling code here:
     }//GEN-LAST:event_resultMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+cajaNoprobabilidad.setText("");
+cajaPoblacion.setText("");
+cajaConfianza.setText("");
+cajaError.setText("");
+cajaresult.setText("");
+cajaProbabilidad.setText("");// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,6 +295,7 @@ cajaresult.setText(String.valueOf(calc));
     private javax.swing.JTextField cajaPoblacion;
     private javax.swing.JTextField cajaProbabilidad;
     private javax.swing.JTextField cajaresult;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

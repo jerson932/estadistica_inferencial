@@ -39,11 +39,15 @@ public class ESTADISTICA2_MAIN extends JFrame {
                           case 1: 
                               PM_finita f  = new PM_finita();
                                 f.setVisible(true);
+                                break;
                           case 2:
                               PM_infinita f_2  = new PM_infinita();
                                 f_2.setVisible(true);
+                                break;
                           case 3:
+                              boolean salir = true;
                               
+                              break;
                           
                       }
                                 
