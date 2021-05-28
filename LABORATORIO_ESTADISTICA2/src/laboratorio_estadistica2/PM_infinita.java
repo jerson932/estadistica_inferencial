@@ -214,8 +214,8 @@ System.out.println(a);
        
  aux1 = (double)((Z*Z)*porcentajea*porcentajeb);
         System.out.println(Z);
-aux2 = (double)((c*c)/divi);
-        System.out.println(c);
+aux2 = (double)((porcentajec*porcentajec));
+        System.out.println("");
 calc =(( aux1/aux2));
 
 cajaResult.setText(String.valueOf(calc));

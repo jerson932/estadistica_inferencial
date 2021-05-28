@@ -204,19 +204,21 @@ double calc  ;
 double aux1;
 double aux2;
 double porcentajep, porcentajeQ, porcentajee;
-int p, Q, e;
+int p, Q;
 double div=100;
 String numN = cajaPoblacion.getText();
 String numZ = cajaConfianza.getText();
+String nume = cajaError.getText();
 p = Integer.parseInt(cajaProbabilidad.getText());
 Q = Integer.parseInt(cajaNoprobabilidad.getText());
-e = Integer.parseInt(cajaError.getText()); //captura los valores enteros
+//e = Integer.parseInt(cajaError.getText()); //captura los valores enteros
 /*String nump = cajaProbabilidad.getText();
 String numQ = cajaNoprobabilidad.getText();
 String nume = cajaresult.getText();*/
 
 double N  = Double.parseDouble(numN) ;
-double Z  = Double.parseDouble(numZ) ; //tomar los valor con decimales  
+double Z  = Double.parseDouble(numZ) ; 
+double e  = Double.parseDouble(nume) ;//tomar los valor con decimales  
 
 /*double p  = Double.parseDouble(nump) ;
 double Q  = Double.parseDouble(numQ) ;
@@ -227,11 +229,16 @@ double e  = Double.parseDouble(nume) ;*/
  porcentajep = (p/div);//tomar los valores enteros para calcular como porcenteaje
  porcentajeQ = (Q/div);
  porcentajee = (e/div);
+ 
+ nivelconfianza confi = new nivelconfianza();
+ double aux3 = confi.Vconfianza(Double.toString(porcentajee));
+ 
+ 
 double v=1;
 aux1 = (double)(N*(Z*Z)*porcentajep*porcentajeQ);
 
 System.out.println(aux1);
-aux2 = (double)((porcentajee*porcentajee)*(N-v))+((Z*Z)*porcentajep*porcentajeQ);
+aux2 = (double)((aux3*aux3)*(N-v))+((Z*Z)*porcentajep*porcentajeQ);
 System.out.println(aux2);
 calc = aux1/aux2;
 
