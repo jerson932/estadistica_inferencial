@@ -8,6 +8,7 @@ package laboratorio_estadistica2;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -31,6 +32,8 @@ public class Distribucion_Normal extends javax.swing.JFrame {
      * Creates new form Distribucion_Normal
      */
     
+
+    
     
     public Distribucion_Normal() {
         initComponents();
@@ -51,38 +54,78 @@ public class Distribucion_Normal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        DesviacionEstandar = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Media = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        RangoMin = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        RangoMax = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jlz1 = new javax.swing.JLabel();
+        jlz2 = new javax.swing.JLabel();
+        jlprob = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Distribucion Normal");
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(400, 400));
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 800));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 557, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 513, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Calcular");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        DesviacionEstandar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                DesviacionEstandarActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Desviacion Estandar");
+
+        jLabel3.setText("Media");
+
+        jLabel4.setText("Rango Min");
+
+        RangoMin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RangoMinActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Rango Max");
+
+        jButton2.setText("LImpiar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Resultado");
+
+        jlz1.setText("Z1:");
+
+        jlz2.setText("Z2:");
+
+        jlprob.setText("Probabilidad:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,15 +134,38 @@ public class Distribucion_Normal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
+                        .addGap(156, 156, 156)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(jButton1)
-                        .addGap(117, 117, 117)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jlz1)
+                                    .addComponent(jlz2)
+                                    .addComponent(jlprob))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(DesviacionEstandar)
+                                    .addComponent(Media, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(RangoMax, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                                    .addComponent(RangoMin)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,16 +173,41 @@ public class Distribucion_Normal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(RangoMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(RangoMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
-                        .addContainerGap())))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(DesviacionEstandar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(Media, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton1)
+                                    .addComponent(jButton2))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlz1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlz2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlprob)))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,54 +216,56 @@ public class Distribucion_Normal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        /** The mean. */
-        double mean;
+        TablaZ tabla = new TablaZ();
+         
+        DecimalFormat df2 = new DecimalFormat("#.##");
+        double mean = Double.parseDouble(Media.getText());
+        double std = Double.parseDouble(DesviacionEstandar.getText());
+        double Max = Double.parseDouble(RangoMax.getText());
+        double Min = Double.parseDouble(RangoMin.getText());
+        
+        double z1 = ((Min-mean)/std)* -1;
+        double z2 = (Max-mean)/std;
+        df2.format(z1);
+        
+        
+        double str1 = Double.parseDouble(tabla.getValue(String.format("%.2f", z1)+":"));
+        double str2 = Double.parseDouble(tabla.getValue(String.format("%.2f", z2)+":"));
+        System.out.println(str1);
+        System.out.println(str2);
+        //System.out.println(mean + "-" + std + "-" + Max + "-" + Min);
+        
+      //  System.out.println(z1+" "+z2);
+        
+        jlz1.setText("Z1: " + str1 );
+        jlz2.setText("Z2: " + str2 );
+        jlprob.setText("Probabilidad: " + (str1+str2)*100 + "%" );
+        graficar(str2,str1);
+        
+        
+        
+        
 
-        /** The standard deviation. */
-        double std = 0;
-
-        /** Precomputed factor for the function value. */
-        double factor;
-        
-        /** Precomputed denominator for the function value. */
-        double denominator;
-               
-        
-        Function2D normal = new NormalDistributionFunction2D(0.0, 1.0);
-        XYDataset dataset = DatasetUtilities.sampleFunction2D(normal, -4, 4, 1000,
-                "Normal");
-
-        XYSeries fLine = new XYSeries("fLine");
-        
-        fLine.add(3.4656, 0);
-        fLine.add(-2.7304, 0);
-        ((XYSeriesCollection) dataset).addSeries(fLine);
-
-        NumberAxis xAxis = new NumberAxis(null);
-        NumberAxis yAxis = new NumberAxis(null);
-        XYDifferenceRenderer renderer = new XYDifferenceRenderer();
-        xAxis.setRange(0, 5);
-        XYPlot plot = new XYPlot(dataset, xAxis, yAxis, renderer);
-
-        JFreeChart chart = new JFreeChart(plot);
-        chart.removeLegend();
-
-        ChartPanel cp = new ChartPanel(chart);
-        
-        
-        
-        cp.setMouseWheelEnabled(true);
-        cp.setPreferredSize(new Dimension(800,800));
-        
-        jPanel1.setLayout(new BorderLayout());
-        jPanel1.add(cp,BorderLayout.NORTH);
-        pack();
-        repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void DesviacionEstandarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesviacionEstandarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_DesviacionEstandarActionPerformed
+
+    private void RangoMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RangoMinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RangoMinActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jlz1.setText("Z1:");
+        jlz2.setText("Z2:");
+        jlprob.setText("Probabilidad:");
+        Media.setText("");
+        DesviacionEstandar.setText("");
+        RangoMax.setText("");
+        RangoMin.setText("");
+        jPanel1.setVisible(false);       // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,11 +301,57 @@ public class Distribucion_Normal extends javax.swing.JFrame {
             }
         });
     }
+    
+    void graficar(double str2, double str1){
+    Function2D normal = new NormalDistributionFunction2D(0, 2);
+        XYDataset dataset = DatasetUtilities.sampleFunction2D(normal, -6, 6, 100,
+                "Normal");
+
+        XYSeries fLine = new XYSeries("fLine");
+        
+        fLine.add((str2*6*2),0);
+        fLine.add(-(str1*6*2), 0);
+      
+        ((XYSeriesCollection) dataset).addSeries(fLine);
+        
+        NumberAxis xAxis = new NumberAxis(null);
+        NumberAxis yAxis = new NumberAxis(null);
+        XYDifferenceRenderer renderer = new XYDifferenceRenderer();
+        yAxis.setRange(0,0.25);
+        xAxis.setRange(-6.5, 6.5);
+        XYPlot plot = new XYPlot(dataset, xAxis, yAxis, renderer);
+
+        JFreeChart chart = new JFreeChart(plot);
+        chart.removeLegend();
+
+        ChartPanel cp = new ChartPanel(chart);
+        
+        cp.setMouseWheelEnabled(true);
+        cp.setPreferredSize(new Dimension(800,800));
+        jPanel1.setVisible(true);
+        jPanel1.setLayout(new BorderLayout());
+        jPanel1.add(cp,BorderLayout.NORTH);
+        pack();
+        repaint();
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DesviacionEstandar;
+    private javax.swing.JTextField Media;
+    private javax.swing.JTextField RangoMax;
+    private javax.swing.JTextField RangoMin;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jlprob;
+    private javax.swing.JLabel jlz1;
+    private javax.swing.JLabel jlz2;
     // End of variables declaration//GEN-END:variables
 }
