@@ -52,15 +52,19 @@ public class ESTADISTICA2_MAIN extends JFrame {
                       }
                                 
                    
-                    
+                    break;
                        
                 case 2:
                          Distribucion_Normal distribucion = new Distribucion_Normal();
                          distribucion.setVisible(true);
                              break;
                 case 3:
-                case 4: 
+                    
+                case 4:
+                    
+                    
                 case 5:
+                     boolean salir = true;
             }
             
     }
