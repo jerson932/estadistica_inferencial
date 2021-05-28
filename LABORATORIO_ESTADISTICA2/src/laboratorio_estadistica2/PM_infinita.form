@@ -55,9 +55,9 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
-                          <Component id="cajaPoblacion" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="cajaParametro" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
-                          <Component id="cajaConfianza" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="cajaSiprobabilidad" min="-2" pref="90" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
@@ -108,8 +108,8 @@
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cajaPoblacion" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="cajaConfianza" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="cajaParametro" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="cajaSiprobabilidad" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -183,12 +183,15 @@
         </Component>
         <Component class="javax.swing.JTextField" name="cajaResult">
         </Component>
-        <Component class="javax.swing.JTextField" name="cajaPoblacion">
+        <Component class="javax.swing.JTextField" name="cajaParametro">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaPoblacionActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaParametroActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="cajaConfianza">
+        <Component class="javax.swing.JTextField" name="cajaSiprobabilidad">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaSiprobabilidadActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cajaNoprobabilidad">
         </Component>

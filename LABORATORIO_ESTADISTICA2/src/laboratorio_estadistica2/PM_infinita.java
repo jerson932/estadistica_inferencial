@@ -39,8 +39,8 @@ public class PM_infinita extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         result = new javax.swing.JButton();
         cajaResult = new javax.swing.JTextField();
-        cajaPoblacion = new javax.swing.JTextField();
-        cajaConfianza = new javax.swing.JTextField();
+        cajaParametro = new javax.swing.JTextField();
+        cajaSiprobabilidad = new javax.swing.JTextField();
         cajaNoprobabilidad = new javax.swing.JTextField();
         cajaError = new javax.swing.JTextField();
         cajaLimpiar = new javax.swing.JButton();
@@ -72,9 +72,15 @@ public class PM_infinita extends javax.swing.JFrame {
             }
         });
 
-        cajaPoblacion.addActionListener(new java.awt.event.ActionListener() {
+        cajaParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaPoblacionActionPerformed(evt);
+                cajaParametroActionPerformed(evt);
+            }
+        });
+
+        cajaSiprobabilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajaSiprobabilidadActionPerformed(evt);
             }
         });
 
@@ -105,9 +111,9 @@ public class PM_infinita extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
-                        .addComponent(cajaPoblacion, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cajaParametro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90)
-                        .addComponent(cajaConfianza, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cajaSiprobabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(80, 80, 80)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,8 +153,8 @@ public class PM_infinita extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cajaPoblacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cajaConfianza, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cajaParametro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cajaSiprobabilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,43 +191,39 @@ public class PM_infinita extends javax.swing.JFrame {
 double calc  ;
 double aux1;
 double aux2;
-double porcentajep, porcentajeQ, porcentajee;
-int p, Q, e;
-double div =100;
+double porcentajea, porcentajeb, porcentajec;
+int a,b,c;
+double divi =100;
 
-String numZ = cajaConfianza.getText();
-p = Integer.parseInt(cajaNoprobabilidad.getText());
-Q = Integer.parseInt(cajaNoprobabilidad.getText());
-e = Integer.parseInt(cajaError.getText()); //captura los valores enteros
-/*String nump = cajaProbabilidad.getText();
-String numQ = cajaNoprobabilidad.getText();
-String nume = cajaresult.getText();*/
+String numZ = cajaParametro.getText();
+a = Integer.parseInt(cajaSiprobabilidad.getText());
+b = Integer.parseInt(cajaNoprobabilidad.getText());
+c = Integer.parseInt(cajaError.getText()); //captura los valores enteros
+double Z  = Double.parseDouble(numZ) ; //tomar los valor con decimales 
+porcentajea= a/divi;
+porcentajeb= b/divi;
+porcentajec= c/divi;
 
-double Z  = Double.parseDouble(numZ) ; //tomar los valor con decimales  
-
-/*double p  = Double.parseDouble(nump) ;
-double Q  = Double.parseDouble(numQ) ;
-double e  = Double.parseDouble(nume) ;*/
- //agregamos las variables a utilizar
- 
- 
- porcentajep = (p/div);//tomar los valores enteros para calcular como porcenteaje
- porcentajeQ = (Q/div);
- porcentajee = (e/div);
-
-
-aux1 = (double)((Math.pow(2,Z))*porcentajep*porcentajeQ);
-
-aux2 = (double)((Math.pow(2,e)));
-
-calc = aux1/aux2;
+ /*porcentajea = (a/divi);
+System.out.println(a);
+//tomar los valores enteros para calcular como porcenteaje
+ porcentajeb = (b/divi);
+ System.out.println(b);
+ porcentajec = (c/divi);
+        System.out.println(c);*/
+       
+ aux1 = (double)((Z*Z)*porcentajea*porcentajeb);
+        System.out.println(Z);
+aux2 = (double)((c*c)/divi);
+        System.out.println(c);
+calc =(( aux1/aux2));
 
 cajaResult.setText(String.valueOf(calc));
     }//GEN-LAST:event_resultActionPerformed
 
-    private void cajaPoblacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaPoblacionActionPerformed
+    private void cajaParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaParametroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cajaPoblacionActionPerformed
+    }//GEN-LAST:event_cajaParametroActionPerformed
 
     private void cajaErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaErrorActionPerformed
         // TODO add your handling code here:
@@ -229,11 +231,15 @@ cajaResult.setText(String.valueOf(calc));
 
     private void cajaLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaLimpiarActionPerformed
 cajaNoprobabilidad.setText("");
-cajaPoblacion.setText("");
-cajaConfianza.setText("");
+cajaParametro.setText("");
+cajaSiprobabilidad.setText("");
 cajaError.setText("");
 cajaResult.setText("");
     }//GEN-LAST:event_cajaLimpiarActionPerformed
+
+    private void cajaSiprobabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaSiprobabilidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaSiprobabilidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,12 +277,12 @@ cajaResult.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField cajaConfianza;
     private javax.swing.JTextField cajaError;
     private javax.swing.JButton cajaLimpiar;
     private javax.swing.JTextField cajaNoprobabilidad;
-    private javax.swing.JTextField cajaPoblacion;
+    private javax.swing.JTextField cajaParametro;
     private javax.swing.JTextField cajaResult;
+    private javax.swing.JTextField cajaSiprobabilidad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
