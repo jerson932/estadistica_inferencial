@@ -191,31 +191,28 @@ public class PM_infinita extends javax.swing.JFrame {
 double calc  ;
 double aux1;
 double aux2;
-double porcentajea, porcentajeb, porcentajec;
-int a,b,c;
+
+double porcentajea, porcentajeb,porcentajec;
+int a,b;
 double divi =100;
 
 String numZ = cajaParametro.getText();
+String numc = cajaError.getText();
 a = Integer.parseInt(cajaSiprobabilidad.getText());
 b = Integer.parseInt(cajaNoprobabilidad.getText());
-c = Integer.parseInt(cajaError.getText()); //captura los valores enteros
+// = Integer.parseInt(cajaError.getText()); //captura los valores enteros
+
 double Z  = Double.parseDouble(numZ) ; //tomar los valor con decimales 
+double c= Double.parseDouble(numc) ; 
 porcentajea= a/divi;
 porcentajeb= b/divi;
 porcentajec= c/divi;
 
- /*porcentajea = (a/divi);
-System.out.println(a);
-//tomar los valores enteros para calcular como porcenteaje
- porcentajeb = (b/divi);
- System.out.println(b);
- porcentajec = (c/divi);
-        System.out.println(c);*/
+ nivelconfianza confi = new nivelconfianza();
+ double aux3 = confi.Vconfianza(Double.toString(porcentajec));
        
- aux1 = (double)((Z*Z)*porcentajea*porcentajeb);
-        System.out.println(Z);
-aux2 = (double)((porcentajec*porcentajec));
-        System.out.println("");
+aux1 = (double)((Z*Z)*porcentajea*porcentajeb); 
+aux2 = (double)((aux3*aux3));
 calc =(( aux1/aux2));
 
 cajaResult.setText(String.valueOf(calc));
