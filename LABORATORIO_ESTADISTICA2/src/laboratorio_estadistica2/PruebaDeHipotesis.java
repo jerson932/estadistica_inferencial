@@ -4,10 +4,7 @@ package laboratorio_estadistica2;
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.apache.commons.math3.stat.inference.TestUtils;
 
-/**
- *
- * @author dsm
- */
+
 public class PruebaDeHipotesis 
 {
     public double zp;

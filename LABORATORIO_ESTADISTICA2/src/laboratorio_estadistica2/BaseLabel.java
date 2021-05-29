@@ -7,10 +7,7 @@ package laboratorio_estadistica2;
 
 import java.awt.Color;
 
-/**
- *
- * @author FLOR DE MARIA
- */
+
 public class BaseLabel {
 
     BaseLabel(String distribucion_Linela, Color BLUE, double d, double d0) {

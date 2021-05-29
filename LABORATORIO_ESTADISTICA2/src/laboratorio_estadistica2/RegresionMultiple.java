@@ -995,7 +995,7 @@ public class RegresionMultiple extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new RegresionMultiple().setVisible(true);
             }
         });
     }

@@ -1,18 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package laboratorio_estadistica2;
 
-/**
- *
- * @author dsm
- */
+
 public class TablaNormal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TablaNormal
-     */
+    
     public TablaNormal() {
         initComponents();
     }

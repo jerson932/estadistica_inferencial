@@ -1,17 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package laboratorio_estadistica2;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 import laboratorio_estadistica2.PruebaDeHipotesis;
 
-/**
- *
- * @author dsm
- */
+
+
 public class Principal extends javax.swing.JFrame {
     NumberFormat nf = NumberFormat.getNumberInstance();
     PruebaDeHipotesis prueba;

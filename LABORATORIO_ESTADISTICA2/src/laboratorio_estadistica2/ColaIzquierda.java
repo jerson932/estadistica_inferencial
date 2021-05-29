@@ -1,15 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package laboratorio_estadistica2;
 
 import java.text.NumberFormat;
 import laboratorio_estadistica2.PruebaDeHipotesis;
-/**
- *
- * @author dsm
- */
+
+
 public class ColaIzquierda extends javax.swing.JFrame {
 
     NumberFormat nf = NumberFormat.getNumberInstance();
