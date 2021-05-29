@@ -138,7 +138,7 @@ public class RegresionMultiple extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        //getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(51, 204, 255));
 
@@ -153,7 +153,7 @@ public class RegresionMultiple extends javax.swing.JFrame {
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 40));
+        //getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 40));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -657,7 +657,7 @@ public class RegresionMultiple extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab4", jPanel8);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        //getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jButton1.setText("p(x<z)");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -665,7 +665,7 @@ public class RegresionMultiple extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        //getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         jButton2.setText("p(x>z)");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -673,7 +673,7 @@ public class RegresionMultiple extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+        //getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
 
         jButton3.setText("p(x<z<x)");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -681,7 +681,7 @@ public class RegresionMultiple extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
+        //getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
 
         jButton4.setText("p(x<z) + p(x>z)");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -689,10 +689,10 @@ public class RegresionMultiple extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
+        //getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     private void btnCalMenorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalMenorActionPerformed
         

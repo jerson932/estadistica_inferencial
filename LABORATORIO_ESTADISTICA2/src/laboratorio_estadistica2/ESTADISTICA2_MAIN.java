@@ -59,7 +59,7 @@ public class ESTADISTICA2_MAIN extends JFrame {
                          distribucion.setVisible(true);
                              break;
                 case 3:
-                    
+                        
                 case 4:
                     
                     
